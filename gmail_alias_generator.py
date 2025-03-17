@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 
 import os
 import random
@@ -15,7 +15,7 @@ def generate_gmail_aliases(main_email, count):
     
     aliases = []
     for i in range(count):
-        # Generate a random suffix (a1, a2, etc.)
+        
         suffix = random.choice(string.ascii_lowercase) + str(random.randint(1, 99))
         alias = f"{username}+{suffix}@{domain}"
         aliases.append(alias)
@@ -26,7 +26,7 @@ def main():
     print("Gmail Alias Generator")
     print("=====================")
     
-    # Get user input
+    
     main_email = input("Enter your main Gmail address: ")
     
     try:
@@ -38,19 +38,19 @@ def main():
         print("Please enter a valid number.")
         return
     
-    # Generate aliases
+    
     aliases = generate_gmail_aliases(main_email, count)
     
     if not aliases:
         return
     
-    # Display generated aliases
+    
     print("\nGenerated Gmail Aliases:")
     print("=======================")
     for i, alias in enumerate(aliases, 1):
         print(f"{i}. {alias}")
     
-    # Ask if user wants to save to file
+    
     save_to_file = input("\nDo you want to save these aliases to a text file? (y/n): ").lower()
     
     if save_to_file == 'y' or save_to_file == 'yes':
